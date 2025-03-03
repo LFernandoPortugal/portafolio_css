@@ -58,15 +58,36 @@ nav ul li a:hover {
   color: var(--color-highlight);
 }
 
-.contact-icon a {
-  color: var(--color-light);
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s;
+.contact-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.contact-icon a:hover {
-  color: var(--color-highlight);
+.contact-btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--color-light);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+}
+
+.contact-btn svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-light);
+  transition: transform 0.3s ease;
+}
+
+.icon-link:hover svg {
+  transform: scale(1.1);
 }
 
 .section {
@@ -90,11 +111,11 @@ nav ul li a:hover {
 }
 
 .hero-content h1 .name {
-  color: #a4ff7a; 
+  color: #a4ff7a;
 }
 
 .hero-content h2 .full-stack {
-  border: 1px solid rgba(255, 255, 255, 0.5); 
+  border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 5px;
   border-radius: 5px;
 }
@@ -114,7 +135,8 @@ nav ul li a:hover {
   filter: drop-shadow(0px -50px 100px rgba(255, 255, 0, 0.5));
 }
 
-.hero-img a, .button {
+.hero-img a,
+.button {
   font-weight: bold;
   display: abosolute;
   padding: 10px 20px;
@@ -125,17 +147,20 @@ nav ul li a:hover {
   transition: background 0.3s;
 }
 
-.hero-img a:hover, .button:hover {
+.hero-img a:hover,
+.button:hover {
   background: var(--color-highlight);
 }
 
-.client-review, .expertise {
+.client-review,
+.expertise {
   order: 1;
   /* width: 45%; */
   margin: 10px;
 }
 
-.client-review img, .expertise img {
+.client-review img,
+.expertise img {
   max-width: 100%;
   height: auto;
 }
@@ -204,7 +229,7 @@ nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Sección de experiencia */
+/* Experience section */
 .experience {
   text-align: center;
   margin-top: 20px;
@@ -214,7 +239,7 @@ nav ul li a:hover {
   margin-top: 10px;
 }
 
-/* Estilos para la sección de habilidades adicionales */
+/* Aditional skills section */
 #additional-skills {
   text-align: center;
   padding: 20px;
@@ -243,6 +268,157 @@ nav ul li a:hover {
 .additional-skill-logos img:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Projects section */
+#projects {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+#projects h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-card {
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.project-card h3 {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.project-card p {
+  text-align: center;
+}
+
+#projects .button {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Efecto hover para los proyectos */
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact section */
+#contact {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: var(--color-light);
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--color-deep-blue);
+  font-size: 36px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+#contact input,
+#contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #d4d4d4;
+  font-size: 16px;
+  color: var(--color-deep-blue); /* Color del texto */
+  outline: none; /* Elimina el borde predeterminado al hacer focus */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: var(--color-highlight);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#contact textarea {
+  resize: vertical; /* Permite redimensionar verticalmente el textarea */
+  min-height: 150px; /* Altura mínima del textarea */
+}
+
+#contact button {
+  padding: 10px 20px;
+  background-color: var(--color-highlight); /* Color de fondo del botón */
+  color: var(--color-dark); /* Color del texto del botón */
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: var(--color-neon-green); /* Cambia el color del botón al hacer hover */
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 768px) {
+  #projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      max-width: 1200px; /* Limita el ancho máximo de la sección */
+      margin: 0 auto; /* Centra la sección en pantallas grandes */
+  }
+
+  #projects h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 80px;
+  }
+
+  .project-thumbnails {
+      flex-direction: row;
+      gap: 2px;
+      width: 100%; /* Ocupa la mitad derecha de la pantalla */
+  }
+
+  .project-card {
+      flex: 1 1 calc(50% - 20px); /* Dos proyectos por fila */
+      max-width: calc(50% - 20px);
+  }
+
+  .project-card:first-child {
+      flex: 1 1 100%; /* Primer proyecto ocupa el 100% del ancho */
+      max-width: 100%;
+  }
+
+  #projects .button {
+      margin: 20px 0;
+      text-align: left;
+      width: 50%; /* Botón ocupa la mitad izquierda */
+      position: relative;
+      top: -100px;
+      text-align: center;
+  }
 }
 
 /* Estilos para pantallas pequeñas */
