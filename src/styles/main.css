@@ -42,7 +42,7 @@ nav {
 
 nav ul {
   list-style: none;
-  display: flex;
+  display: none;
   gap: 1rem;
   margin: 0;
   padding: 0;
@@ -61,33 +61,33 @@ nav ul li a:hover {
 .contact-icon {
   display: flex;
   align-items: center;
-  gap: 10px;
+  cursor: pointer;
+  border: var(--color-light) 1px solid;
+  border-radius: 25px;
 }
 
-.contact-btn {
+.contact-icon a {
   padding: 10px 20px;
-  background-color: transparent;
   color: var(--color-light);
   border: none;
-  border-radius: 5px;
   font-size: 16px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
-.contact-btn:hover {
-  background-color: #0056b3;
+.contact-icon:hover {
+  background-color: var(--color-neon-green);
 }
 
-.contact-btn svg {
-  width: 24px;
-  height: 24px;
-  color: var(--color-light);
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  margin-right: 5px;
+  color: var(--color-deep-blue);
+  background-color: var(--color-highlight);
+  border-radius: 50%;
   transition: transform 0.3s ease;
-}
-
-.icon-link:hover svg {
-  transform: scale(1.1);
 }
 
 .section {
@@ -102,6 +102,16 @@ nav ul li a:hover {
   text-align: center;
   padding: 20px;
   background: var(--gradient-main);
+}
+
+.hero-sections {
+  order: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
 .hero-content {
@@ -163,6 +173,7 @@ nav ul li a:hover {
 .expertise img {
   max-width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
 /* About section */
@@ -339,7 +350,7 @@ nav ul li a:hover {
 #contact form {
   display: flex;
   flex-direction: column;
-  gap: 15px; 
+  gap: 15px;
 }
 
 #contact input,
@@ -376,48 +387,108 @@ nav ul li a:hover {
 }
 
 #contact button:hover {
-  background-color: var(--color-neon-green); /* Cambia el color del botón al hacer hover */
+  background-color: var(
+    --color-neon-green
+  ); /* Cambia el color del botón al hacer hover */
 }
 
 /* Media queries para pantallas grandes */
 @media (min-width: 768px) {
+  nav ul{
+    display: flex;
+  }
+
+  .hero-sections {
+    flex-wrap: nowrap;
+  }
+  
+  .hero-content {
+    order: 1;
+    width: 100%;
+  }
+
+  .hero-img {
+    order: 2;
+  }
+
+  .client-review {
+    order: 1;
+    width: 100%;
+    margin: 10px 0;
+    rotate: -8deg;
+  }
+
+  .expertise {
+    order: 3;
+    width: 100%;
+    margin: 10px 0;
+    rotate: 8deg;
+  }
+
+  .about {
+    margin-bottom: -200px;
+  }
+
+  .about-content {
+    width: 50%;
+  }
+
+  .about-images {
+    justify-content: space-between;
+  }
+
+  .about-img-1 {
+    position: relative;
+    width: 10%;
+    top: -200px;
+    left: 30px;
+    rotate: -15deg;
+  }
+  .about-img-2 {
+    position: relative;
+    width: 10%;
+    top: -200px;
+    right: 30px;
+    rotate: 15deg;
+  }
+
   #projects {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-items: center;
-      max-width: 1200px; /* Limita el ancho máximo de la sección */
-      margin: 0 auto; /* Centra la sección en pantallas grandes */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    max-width: 1200px; /* Limita el ancho máximo de la sección */
+    margin: 0 auto; /* Centra la sección en pantallas grandes */
   }
 
   #projects h2 {
-      width: 100%;
-      text-align: center;
-      font-size: 80px;
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
   }
 
   .project-thumbnails {
-      flex-direction: row;
-      gap: 2px;
-      width: 100%; /* Ocupa la mitad derecha de la pantalla */
+    flex-direction: row;
+    gap: 2px;
+    width: 100%; /* Ocupa la mitad derecha de la pantalla */
   }
 
   .project-card {
-      flex: 1 1 calc(50% - 20px); /* Dos proyectos por fila */
-      max-width: calc(50% - 20px);
+    flex: 1 1 calc(50% - 20px); /* Dos proyectos por fila */
+    max-width: calc(50% - 20px);
   }
 
   .project-card:first-child {
-      flex: 1 1 100%; /* Primer proyecto ocupa el 100% del ancho */
-      max-width: 100%;
+    flex: 1 1 100%; /* Primer proyecto ocupa el 100% del ancho */
+    max-width: 100%;
   }
 
   #projects .button {
-      margin: 20px 0;
-      text-align: left;
-      width: 50%; /* Botón ocupa la mitad izquierda */
-      position: relative;
-      top: -100px;
-      text-align: center;
+    margin: 20px 0;
+    text-align: left;
+    width: 50%; /* Botón ocupa la mitad izquierda */
+    position: relative;
+    top: -100px;
+    text-align: center;
   }
 }
 
